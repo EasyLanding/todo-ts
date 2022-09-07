@@ -24,7 +24,7 @@ const TaskInfo = (props: any) => {
                 seconds: props.sec,
             };
         });
-    }, []);
+    }, [props]);
 
     useEffect(() => {
         let interval: any = null;
@@ -53,7 +53,7 @@ const TaskInfo = (props: any) => {
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [timerOn, timeFlag.minutes, timeFlag.seconds]);
+    }, [timerOn, timeFlag.minutes, timeFlag.seconds, props]);
 
     let m: string | number = timeFlag.minutes;
     let s: string | number = timeFlag.seconds;
